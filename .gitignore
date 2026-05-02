@@ -1,6 +1,7 @@
 # Bild-Originale (Master-Dateien, separat in Cloudflare R2)
 originals
 originals/
+originals_resolved/
 dist-images/
 
 # InDesign-Quellpaket (1+ GB, enthält Originale & Fonts)

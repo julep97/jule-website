@@ -10,10 +10,17 @@
   },
   "scripts": {
     "images:optimize": "node tools/optimize-images.mjs",
-    "images:ab": "node tools/ab-compare.mjs"
+    "images:ab": "node tools/ab-compare.mjs",
+    "images:gallery": "node tools/gallery.mjs",
+    "images:build": "node tools/build-from-mapping.mjs",
+    "images:upload": "node tools/upload-r2.mjs",
+    "html:transform": "node tools/transform-html.mjs"
   },
   "devDependencies": {
+    "@aws-sdk/client-s3": "^3.1041.0",
     "glob": "^13.0.6",
-    "sharp": "^0.34.5"
+    "p-limit": "^7.3.0",
+    "sharp": "^0.34.5",
+    "wrangler": "^4.87.0"
   }
 }
