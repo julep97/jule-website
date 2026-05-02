@@ -1,18 +1,18 @@
 {
-  "_comment": "Mapping HTML-Slot-Key → Originaldatei. Pfade relativ zu Repo-Root. HEIC wurde nach originals_resolved/ als JPEG q=100 konvertiert.",
+  "_comment": "Mapping HTML-Slot-Key → Originaldatei. Basiert auf 1:1-Vergleich mit portfolio2.pdf. Pfade relativ zu Repo-Root. originals_pdf/ = aus PDF extrahierte Bilder (für Slots wo kein hochauflösendes Original verfügbar oder wo Jules PDF-Crop entscheidend ist).",
 
   "01-cover-hand-clean.png":      "originals/Front.tif",
 
-  "p05-sauer1-detail.png":        "originals_resolved/IMG_6047.jpg",
-  "p06-sauer1-interior.png":      "originals/Schafswolle.tif",
-  "p07-sauer2-a.png":             "originals/IMG_5781.jpeg",
-  "p07-sauer2-b.png":             "originals/IMG_5782.jpeg",
-  "p07-sauer2-d.png":             "originals/IMG_5783.jpeg",
-  "p08-sauer2-leuchtkasten.png":  "originals_resolved/IMG_4729.jpg",
+  "p05-sauer1-detail.png":        "originals/Entwurf1.tif",
+  "p06-sauer1-interior.png":      "originals_pdf/p-007-002.jpg",
+  "p07-sauer2-a.png":             "originals/IMG_5782.jpeg",
+  "p07-sauer2-b.png":             "originals/IMG_5781.jpeg",
+  "p07-sauer2-d.png":             "originals/IMG_5779.jpeg",
+  "p08-sauer2-leuchtkasten.png":  "originals/Schafswolle.tif",
 
   "p09-lachen-b.png":             "originals_resolved/IMG_6063.jpg",
-  "p09-lachen-e.png":             "originals_resolved/IMG_6065.jpg",
-  "p10-lachen-installation.png":  "originals_resolved/IMG_6053.jpg",
+  "p09-lachen-e.png":             "originals_resolved/IMG_6053.jpg",
+  "p10-lachen-installation.png":  "originals/Bildschirmfoto 2026-04-21 um 12.26.34.png",
 
   "p12-portrait-full.png":        "originals/Bildschirmfoto 2026-02-12 um 18.15.35.tif",
   "p17-ausstellung.png":          "originals/IMG_7551.jpeg",
@@ -20,11 +20,11 @@
   "p19-office-b.png":             "originals/rettung2.tif",
 
   "p20-rettungsschilder.png":     "originals/Rettungzeichen.tif",
-  "p22-freudenberg-a.png":        "originals/Dachhimmel_Iteration_1_Jule_1b.png",
-  "p24-muster.png":               "originals/Aufgabe7.tif",
-  "p26-kamm-curtain.png":         "originals/Kamm.tif",
+  "p22-freudenberg-a.png":        "originals/Freudenberg_mapping Kopie.tif",
+  "p24-muster.png":               "originals/look2.tif",
+  "p26-kamm-curtain.png":         "originals/Aufgabe7.tif",
   "p27-seat.png":                 "originals/DESIGNFREUD.tif",
   "p28-bloom.png":                "originals/Bildschirmfoto 2024-10-17 um 09.28.47.png",
-  "p29-inform-b.png":             "originals/Bildschirmfoto 2026-02-12 um 18.42.43.png",
-  "p30-outro.png":                "originals/david-benes-zu-xmXfWrPA-unsplash.tif"
+  "p29-inform-b.png":             "originals/Bildschirmfoto 2026-04-21 um 12.26.14.png",
+  "p30-outro.png":                "originals/Front.tif"
 }
