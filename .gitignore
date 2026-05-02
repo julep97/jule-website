@@ -1,6 +1,10 @@
 # Bild-Originale (Master-Dateien, separat in Cloudflare R2)
+originals
 originals/
 dist-images/
+
+# InDesign-Quellpaket (1+ GB, enthält Originale & Fonts)
+portfolio2 Ordner/
 
 # PDF-Quelle (zu groß für Repo, lokal vorhanden)
 *.pdf

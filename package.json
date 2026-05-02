@@ -1,0 +1,19 @@
+{
+  "name": "jule-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio website for Jule Plaehn — Textile Design",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julep97/jule-website.git"
+  },
+  "scripts": {
+    "images:optimize": "node tools/optimize-images.mjs",
+    "images:ab": "node tools/ab-compare.mjs"
+  },
+  "devDependencies": {
+    "glob": "^13.0.6",
+    "sharp": "^0.34.5"
+  }
+}
