@@ -1,0 +1,22 @@
+# Bild-Originale (Master-Dateien, separat in Cloudflare R2)
+originals/
+dist-images/
+
+# PDF-Quelle (zu groß für Repo, lokal vorhanden)
+*.pdf
+
+# Node / Wrangler
+node_modules/
+.wrangler/
+.dev.vars
+
+# Secrets
+.env
+.env.local
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
