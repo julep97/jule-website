@@ -33,11 +33,12 @@
     "_note": "IMG_5782.jpeg fehlt im neuen Ordner — temporär IMG_5781 reused, pHash entscheidet final"
   },
   "p07-sauer2-b.png": {
-    "original": "originals/IMG_5781.jpeg",
-    "aspectRatio": "3/4",
+    "original": "originals_pdf/p-008-006.jpg",
+    "aspectRatio": "4/3",
     "focal": [0.5, 0.5],
     "cropStrategy": "focal",
-    "pdfPage": 8
+    "pdfPage": 8,
+    "_note": "Aerial-View aller Schafswoll-Blasen (PDF p8 Bild 3). Vorher fälschlich IMG_5781 (Duplikat von slot-a)."
   },
   "p07-sauer2-d.png": {
     "original": "originals/IMG_5779.jpeg",
