@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://julep97.github.io/jule-website/sitemap.xml
