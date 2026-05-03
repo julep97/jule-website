@@ -10,11 +10,12 @@
   },
 
   "p05-sauer1-detail.png": {
-    "original": "originals/Entwurf1.tif",
-    "aspectRatio": "1/1.08",
+    "original": "originals_pdf/p-006-001.jpg",
+    "aspectRatio": "1/1",
     "focal": [0.5, 0.5],
     "cropStrategy": "focal",
-    "pdfPage": 6
+    "pdfPage": 6,
+    "_note": "Sauer-1-Kreismuster (gestickte Kreise auf hellem Stoff). Originals/Entwurf1.tif war falsch (zeigte Filz-Trapez)."
   },
   "p06-sauer1-interior.png": {
     "original": "originals_pdf/p-007-002.jpg",
@@ -46,11 +47,12 @@
     "pdfPage": 8
   },
   "p08-sauer2-leuchtkasten.png": {
-    "original": "originals/Schafswolle.tif",
-    "aspectRatio": "16/9",
-    "focal": [0.5, 0.5],
+    "original": "originals_pdf/p-009-008.jpg",
+    "aspectRatio": "3/4",
+    "focal": [0.5, 0.4],
     "cropStrategy": "focal",
-    "pdfPage": 9
+    "pdfPage": 9,
+    "_note": "Küche mit 3 Sauer-2-Modulen vor Leuchtkästen-Pattern. Originals/Schafswolle.tif war falsch (Webware-Detail statt Installation)."
   },
 
   "p09-lachen-b.png": {

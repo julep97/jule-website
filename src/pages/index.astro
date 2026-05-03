@@ -1,5 +1,7 @@
 ---
 import Editorial from '../layouts/Editorial.astro';
+import { projects } from '../data/projects';
+
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 
@@ -8,22 +10,42 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <p class="eyebrow">— textile design /26 · krefeld</p>
     <h1 class="display">jule plaehn</h1>
     <p class="lead">
-      Drei Projekte zwischen Material, Raum und Symbol —
-      <em>Nutritions</em>, <em>(Objekt) siebzig</em> und <em>Freie Arbeiten</em>.
+      Sechs Arbeiten zwischen Material, Raum und Symbol — von der textilen
+      Akustik einer WG-Küche bis zur Atemführungs-Station im Textilmuseum.
     </p>
 
     <nav class="hero-nav" aria-label="Projekte">
-      <a href={`${base}/work/sauer-1`} class="hero-link">
-        <span class="num">/01</span>
-        <span class="title">Entwurf Sauer 1</span>
-        <span class="meta">— Filz · Akustik · Nutritions</span>
-      </a>
-      <a href={`${base}/print`} class="hero-link">
+      {projects.map(p => (
+        <a
+          href={p.status === 'live' ? `${base}/work/${p.slug}/` : '#'}
+          class:list={['hero-link', p.status === 'wip' && 'hero-link--wip']}
+          aria-disabled={p.status === 'wip' ? 'true' : undefined}
+          tabindex={p.status === 'wip' ? -1 : undefined}
+        >
+          <span class="num">/{p.num}</span>
+          <span class="title">{p.title}</span>
+          <span class="meta">
+            {p.status === 'wip' ? <em>im aufbau</em> : p.meta}
+          </span>
+        </a>
+      ))}
+
+      <a href={`${base}/print/`} class="hero-link hero-link--print">
         <span class="num">/00</span>
         <span class="title">Vollständiges Portfolio</span>
         <span class="meta">— Print-Ansicht, alle 30 Seiten</span>
       </a>
     </nav>
+
+    <footer class="hero-foot">
+      <p>
+        <span>Krefeld</span>
+        <span class="sep">·</span>
+        <a href="mailto:jule.plaehn@web.de">jule.plaehn@web.de</a>
+        <span class="sep">·</span>
+        <a href="tel:+4901636279334">01636279334</a>
+      </p>
+    </footer>
   </article>
 </Editorial>
 
@@ -36,7 +58,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .hero .eyebrow { margin-bottom: var(--gap-md); }
   .hero h1.display { margin-bottom: var(--gap-md); }
   .hero .lead { max-width: 36ch; margin-bottom: var(--gap-xl); color: var(--ink); }
-  .hero em { font-style: italic; }
 
   .hero-nav { display: flex; flex-direction: column; gap: 0; }
   .hero-link {
@@ -48,16 +69,45 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .hero-link:last-child { border-bottom: 1px solid var(--hair); }
   .hero-link:hover, .hero-link:focus-visible {
-    background: var(--paper);
-    outline: none;
+    background: var(--paper); outline: none;
   }
-  .hero-link .num { font-family: var(--font-mono); font-size: .8rem; color: var(--contrast); }
-  .hero-link .title { font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2.25rem); font-style: italic; }
-  .hero-link .meta { font-family: var(--font-mono); font-size: .8rem; color: var(--contrast); }
+  .hero-link--wip { color: var(--contrast); cursor: default; }
+  .hero-link--wip:hover { background: transparent; }
+  .hero-link--print { background: var(--paper); }
+  .hero-link--print .title { font-style: italic; }
+
+  .hero-link .num {
+    font-family: var(--font-mono); font-size: .8rem; color: var(--contrast);
+  }
+  .hero-link .title {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-style: italic;
+    line-height: 1.1;
+  }
+  .hero-link .meta {
+    font-family: var(--font-mono); font-size: .75rem; color: var(--contrast);
+    text-align: right;
+  }
+  .hero-link .meta em { font-style: italic; color: var(--red-text); }
+
+  .hero-foot {
+    margin-top: var(--gap-xl);
+    padding-top: var(--gap-md);
+    border-top: 1px solid var(--hair);
+    font-family: var(--font-mono); font-size: .75rem;
+    color: var(--contrast);
+  }
+  .hero-foot a { color: var(--ink); border-bottom: 1px solid transparent; padding-bottom: 1px; }
+  .hero-foot a:hover, .hero-foot a:focus-visible { border-color: var(--red); outline: none; }
+  .hero-foot .sep { margin: 0 .5rem; opacity: .5; }
 
   @media (max-width: 640px) {
     .hero { padding: var(--gap-lg) var(--gap-sm); }
-    .hero-link { grid-template-columns: 3rem 1fr; }
-    .hero-link .meta { grid-column: 2; color: var(--contrast); }
+    .hero-link { grid-template-columns: 3rem 1fr; padding: var(--gap-sm) 0; }
+    .hero-link .meta { grid-column: 2; text-align: left; }
+    .hero-foot p { display: flex; flex-wrap: wrap; gap: .5rem 0; }
+    .hero-foot .sep { display: none; }
+    .hero-foot a { display: block; width: 100%; }
   }
 </style>
