@@ -7,6 +7,7 @@ dist-images/
 
 # InDesign-Quellpaket (1+ GB, enthält Originale & Fonts)
 portfolio2 Ordner/
+portfolio2 Ordner2/
 
 # PDF-Quelle (zu groß für Repo, lokal vorhanden)
 *.pdf
@@ -26,3 +27,4 @@ Thumbs.db
 .vscode/
 .idea/
 *.swp
+.claude/

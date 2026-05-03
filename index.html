@@ -208,7 +208,8 @@
     overflow:hidden;
   }
   .placeholder.has-img{background:var(--paper-2)}
-  .placeholder img{width:100%;height:100%;object-fit:cover;display:block}
+  .placeholder img{width:100%;height:100%;object-fit:cover;display:block;object-position: var(--focus-x, 50%) var(--focus-y, 50%)}
+  .placeholder picture[data-crop="contain"] img{object-fit:contain;background:var(--paper-2)}
   picture{display:contents}
   .placeholder.has-img .ph-label{display:none}
   .placeholder .ph-label{
@@ -352,32 +353,6 @@
     font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.1em;
     color:rgba(247,244,238,.75); margin-top: 28px; text-transform:lowercase;
   }
-
-  /* Technical drawing */
-  .tech-wrap{
-    display:grid; grid-template-columns: 1.35fr 1fr; gap: 5vw; align-items:start;
-  }
-  .tech-svg{
-    width:100%;
-    aspect-ratio: 1/1.15;
-    background: var(--paper);
-    border:1px solid var(--hair);
-  }
-  .tech-list{
-    font-family:"JetBrains Mono",monospace; font-size:12px; line-height:1.9;
-    color:var(--body);
-    padding-top: 20px;
-  }
-  .tech-list ol{list-style:none;padding:0;margin:0}
-  .tech-list li{
-    display:grid; grid-template-columns: 28px 1fr; gap: 10px;
-    padding: 6px 10px; border-bottom:1px dotted var(--hair);
-    cursor:default;
-    transition: background .2s, color .2s;
-  }
-  .tech-list li .n{color:var(--coral); font-weight:500}
-  .tech-list li.hl, .tech-list li:hover{background:var(--paper-2); color:var(--ink)}
-  .tech-list li.hl .n{color:var(--coral)}
 
   .o70-image-row{
     display:grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 80px;
@@ -581,7 +556,6 @@
     .subproj header{grid-template-columns:1fr; gap:20px}
     .asym-grid .ph-a, .asym-grid .ph-b, .asym-grid .ph-c, .asym-grid .ph-d{grid-column: 1 / -1; margin-top:0}
     .o70-cover{grid-template-columns:1fr; gap:30px; min-height:auto}
-    .tech-wrap{grid-template-columns:1fr}
     .o70-image-row{grid-template-columns:1fr}
     .o70-image-row .wide{grid-column: auto}
     .fa-grid{grid-template-columns: 1fr; grid-auto-rows: 240px}
@@ -633,7 +607,7 @@
       <div class="cover-inner">
         <div class="cover-left">
           <div class="placeholder has-img" style="height:84vh">
-            <picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.avif?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.webp?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.jpg?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Hand hinter geripptem Textil — Cover" loading="lazy"></picture>
+            <picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:3/4.1;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.avif?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.webp?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/01-cover-hand-clean-1920w.jpg?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Hand hinter geripptem Textil — Cover" loading="lazy"></picture>
           </div>
         </div>
         <div class="cover-right">
@@ -722,10 +696,10 @@
           <p class="text">Aus der Form „Sauer" wurde dieser Vollversatz in Kachelform gestaltet. Vernäht wurde Filz, um ein verstärktes Textil zu erhalten. In einem Holzrahmen kann das modulare System an der Wand angebracht werden — exemplarisch in einem sehr hellhörigen Esszimmer einsetzbar.</p>
         </header>
         <div class="asym-grid">
-          <div class="placeholder has-img ph-a"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 1 — Filz-Kacheldetail" loading="lazy"></picture></div>
-          <div class="placeholder has-img ph-b"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 1 — Modul-Detail" loading="lazy"></picture></div>
+          <div class="placeholder has-img ph-a"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1.08;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 1 — Filz-Kacheldetail" loading="lazy"></picture></div>
+          <div class="placeholder has-img ph-b"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:3/4;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-b-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 1 — Modul-Detail" loading="lazy"></picture></div>
         </div>
-        <div class="placeholder has-img fullbleed"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p06-sauer1-interior-561w.avif?v=1777741666 561w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p06-sauer1-interior-561w.webp?v=1777741666 561w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p06-sauer1-interior-561w.jpg?v=1777741666" alt="Sauer 1 — Esszimmer-Visualisierung" loading="lazy"></picture></div>
+        <div class="placeholder has-img fullbleed"><picture style="--focus-x:50.0%;--focus-y:45.0%;--aspect-ratio:16/9;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p06-sauer1-interior-561w.avif?v=1777822010 561w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p06-sauer1-interior-561w.webp?v=1777822010 561w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p06-sauer1-interior-561w.jpg?v=1777822010" alt="Sauer 1 — Esszimmer-Visualisierung" loading="lazy"></picture></div>
       </div>
 
       <!-- Sub: Sauer 2 -->
@@ -738,10 +712,10 @@
           <p class="text">Weiter festgehalten an der Form „Sauer" wurden hier frei genähte Kreise mit Schafswolle gefüllt. Aus unterschiedlichen Materialien realisiert. Mit Schafswollresten befüllte Blasen, gerahmt und vor Leuchtkästen gespannt.</p>
         </header>
         <div class="asym-grid">
-          <div class="placeholder has-img ph-c"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 2 — genähte Blasen mit Schafswolle" loading="lazy"></picture></div>
-          <div class="placeholder has-img ph-d"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 2 — dunkles Material" loading="lazy"></picture></div>
+          <div class="placeholder has-img ph-c"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:4/3;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-a-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 2 — genähte Blasen mit Schafswolle" loading="lazy"></picture></div>
+          <div class="placeholder has-img ph-d"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:5/3;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p07-sauer2-d-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 2 — dunkles Material" loading="lazy"></picture></div>
         </div>
-        <div class="placeholder has-img fullbleed"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 2 — gerahmt vor Leuchtkästen" loading="lazy"></picture></div>
+        <div class="placeholder has-img fullbleed"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:16/9;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p08-sauer2-leuchtkasten-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Sauer 2 — gerahmt vor Leuchtkästen" loading="lazy"></picture></div>
       </div>
 
       <!-- Sub: Lachen -->
@@ -754,10 +728,10 @@
           <p class="text">Eine exakte Ausarbeitung; mit Lasercutter zugeschnitten / eine freie Ausarbeitung; mit Hand zugeschnitten. Entwurf als Installation auf dem Tisch: als Vase, Kerzenhalter (jeweils mit einem Glas in der Mitte), Flaschenaufbewahrung. Durch die Ösen und Karabiner flexibel an der Wand anwendbar.</p>
         </header>
         <div class="asym-grid">
-          <div class="placeholder has-img ph-a"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Lachen — Filzdetail" loading="lazy"></picture></div>
-          <div class="placeholder has-img ph-b"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Lachen — Wandanwendung" loading="lazy"></picture></div>
+          <div class="placeholder has-img ph-a"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:4/3;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-b-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Lachen — Filzdetail" loading="lazy"></picture></div>
+          <div class="placeholder has-img ph-b"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:3/4;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p09-lachen-e-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Lachen — Wandanwendung" loading="lazy"></picture></div>
         </div>
-        <div class="placeholder has-img fullbleed"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Lachen — Installations-Rendering" loading="lazy"></picture></div>
+        <div class="placeholder has-img fullbleed"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:21/6;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p10-lachen-installation-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Lachen — Installations-Rendering" loading="lazy"></picture></div>
       </div>
     </section>
 
@@ -773,161 +747,37 @@
           <p class="body-copy" style="margin-top: 40px; max-width:50ch">Objekt 70 ist eine frei zugängliche Atemführungs-Station für Ruhe- und Erste-Hilfe-Räume in öffentlichen Gebäuden und Unternehmen. Das Objekt „atmet" sichtbar in einem vorgegebenen Rhythmus und ermöglicht Menschen in Stress- oder Paniksituationen, ihre Atmung ohne Sprache, App oder fremde Hilfe zu regulieren.</p>
           <p class="caption ink" style="margin-top: 20px">patentiert · gezeigt im deutschen textilmuseum</p>
         </div>
-        <div class="placeholder has-img portrait"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p12-portrait-full-701w.avif?v=1777741666 701w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p12-portrait-full-701w.webp?v=1777741666 701w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p12-portrait-full-701w.jpg?v=1777741666" alt="Objekt 70 — Porträt" loading="lazy"></picture></div>
+        <div class="placeholder has-img portrait"><picture style="--focus-x:50.0%;--focus-y:40.0%;--aspect-ratio:3/4;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p12-portrait-full-701w.avif?v=1777822010 701w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p12-portrait-full-701w.webp?v=1777822010 701w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p12-portrait-full-701w.jpg?v=1777822010" alt="Objekt 70 — Porträt" loading="lazy"></picture></div>
       </div>
 
       <!-- Full-bleed claim -->
       <div class="o70-claim fade">
-        <div class="eye has-img" style="background:none;border-color:rgba(255,255,255,.15)"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Ausstellung Sehnsucht Wald" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></picture></div>
+        <div class="eye has-img" style="background:none;border-color:rgba(255,255,255,.15)"><picture style="--focus-x:50.0%;--focus-y:40.0%;--aspect-ratio:1/1;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p15-augen-portrait-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p15-augen-portrait-1200w.avif?v=1777822010 1200w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p15-augen-portrait-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p15-augen-portrait-1200w.webp?v=1777822010 1200w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p15-augen-portrait-1200w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p15-augen-portrait-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p15-augen-portrait-1200w.jpg?v=1777822010 1200w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Augen-Portrait · Atemregulierung" loading="lazy"></picture></div>
         <blockquote>
           „Angst ist ein natürliches Warnsignal, doch <span class="hi">wenn sie den Alltag bestimmt, wird sie zur Krankheit.</span>"
         </blockquote>
         <div class="credit">— (objekt) siebzig · statement</div>
       </div>
 
-      <!-- Technical drawing with interactive tooltips -->
-      <div style="padding: 7vw 0 2vw">
-        <div class="eyebrow"><span class="dot"></span><span>technischer aufbau · hover für bauteile</span></div>
-        <div class="tech-wrap fade">
-          <svg class="tech-svg" viewBox="0 0 520 600" xmlns="http://www.w3.org/2000/svg" id="techSvg">
-            <defs>
-              <style>
-                .part{stroke:#1E3A8A; stroke-opacity:.7; stroke-width:1; fill:#F7F4EE; cursor:pointer; transition: fill .2s, stroke .2s}
-                .part:hover, .part.hl{fill:#FDE3E6; stroke:#E63946; stroke-opacity:1}
-                .lead-line{stroke:#1E3A8A; stroke-opacity:.5; stroke-width:.7; fill:none}
-                .num-circle{fill:#F7F4EE; stroke:#E63946; stroke-width:1}
-                .num-circle.hl{fill:#E63946}
-                .num-text{font-family:"JetBrains Mono", monospace; font-size:10px; fill:#E63946; text-anchor:middle; pointer-events:none}
-                .num-text.hl{fill:#F7F4EE}
-                .lbl{font-family:"JetBrains Mono",monospace; font-size:8px; fill:#1E3A8A; fill-opacity:.55; text-transform:lowercase; letter-spacing:.08em}
-              </style>
-            </defs>
-
-            <!-- Title -->
-            <text class="lbl" x="260" y="22" text-anchor="middle">(objekt) siebzig — explosionszeichnung (platzhalter)</text>
-
-            <!-- Base plate (part 1 - Vorrichtung) -->
-            <rect class="part" data-n="1" x="140" y="480" width="240" height="30" rx="2"/>
-
-            <!-- Tube body (part 2 - Rohrkörper) -->
-            <rect class="part" data-n="2" x="220" y="200" width="80" height="280" rx="4"/>
-            <!-- Inner tube lines for texture -->
-            <line class="lead-line" x1="240" y1="210" x2="240" y2="470"/>
-            <line class="lead-line" x1="280" y1="210" x2="280" y2="470"/>
-
-            <!-- Membrane/balloon (part 3) -->
-            <ellipse class="part" data-n="3" cx="260" cy="170" rx="60" ry="42"/>
-
-            <!-- Cap (part 4) -->
-            <rect class="part" data-n="4" x="228" y="120" width="64" height="18" rx="3"/>
-
-            <!-- Connector ring (part 5) -->
-            <rect class="part" data-n="5" x="210" y="195" width="100" height="10" rx="2"/>
-
-            <!-- LED ring (part 6) -->
-            <circle class="part" data-n="6" cx="260" cy="340" r="46" fill="none"/>
-            <circle class="part" data-n="6" cx="260" cy="340" r="42" fill="none"/>
-
-            <!-- Sensor (part 7) -->
-            <rect class="part" data-n="7" x="350" y="330" width="28" height="20" rx="2"/>
-
-            <!-- Speaker (part 8) -->
-            <circle class="part" data-n="8" cx="140" cy="340" r="14"/>
-
-            <!-- Motor housing (part 9) -->
-            <rect class="part" data-n="9" x="200" y="420" width="120" height="36" rx="3"/>
-
-            <!-- Battery (part 10) -->
-            <rect class="part" data-n="10" x="250" y="530" width="50" height="14" rx="2"/>
-
-            <!-- Cable (part 11) -->
-            <path class="part" data-n="11" d="M 160 505 C 140 530, 120 540, 90 535" fill="none" stroke-width="2"/>
-
-            <!-- Remote (part 12) -->
-            <rect class="part" data-n="12" x="40" y="510" width="40" height="60" rx="4"/>
-            <circle class="lead-line" cx="60" cy="540" r="6"/>
-            <line class="lead-line" x1="56" y1="555" x2="64" y2="555"/>
-
-            <!-- Lead lines + numbers -->
-            <g>
-              <line class="lead-line" x1="260" y1="495" x2="420" y2="495"/>
-              <circle class="num-circle" data-num="1" cx="432" cy="495" r="9"/>
-              <text class="num-text" data-num="1" x="432" y="498">1</text>
-
-              <line class="lead-line" x1="300" y1="300" x2="430" y2="260"/>
-              <circle class="num-circle" data-num="2" cx="444" cy="258" r="9"/>
-              <text class="num-text" data-num="2" x="444" y="261">2</text>
-
-              <line class="lead-line" x1="310" y1="150" x2="440" y2="130"/>
-              <circle class="num-circle" data-num="3" cx="454" cy="128" r="9"/>
-              <text class="num-text" data-num="3" x="454" y="131">3</text>
-
-              <line class="lead-line" x1="292" y1="125" x2="420" y2="75"/>
-              <circle class="num-circle" data-num="4" cx="434" cy="73" r="9"/>
-              <text class="num-text" data-num="4" x="434" y="76">4</text>
-
-              <line class="lead-line" x1="220" y1="200" x2="90" y2="180"/>
-              <circle class="num-circle" data-num="5" cx="78" cy="178" r="9"/>
-              <text class="num-text" data-num="5" x="78" y="181">5</text>
-
-              <line class="lead-line" x1="306" y1="340" x2="390" y2="395"/>
-              <circle class="num-circle" data-num="6" cx="404" cy="400" r="9"/>
-              <text class="num-text" data-num="6" x="404" y="403">6</text>
-
-              <line class="lead-line" x1="378" y1="340" x2="470" y2="340"/>
-              <circle class="num-circle" data-num="7" cx="484" cy="340" r="9"/>
-              <text class="num-text" data-num="7" x="484" y="343">7</text>
-
-              <line class="lead-line" x1="126" y1="340" x2="60" y2="340"/>
-              <circle class="num-circle" data-num="8" cx="48" cy="340" r="9"/>
-              <text class="num-text" data-num="8" x="48" y="343">8</text>
-
-              <line class="lead-line" x1="320" y1="438" x2="425" y2="430"/>
-              <circle class="num-circle" data-num="9" cx="440" cy="428" r="9"/>
-              <text class="num-text" data-num="9" x="440" y="431">9</text>
-
-              <line class="lead-line" x1="300" y1="537" x2="400" y2="545"/>
-              <circle class="num-circle" data-num="10" cx="418" cy="546" r="9"/>
-              <text class="num-text" data-num="10" x="418" y="549">10</text>
-
-              <line class="lead-line" x1="90" y1="535" x2="60" y2="585"/>
-              <circle class="num-circle" data-num="11" cx="52" cy="588" r="9"/>
-              <text class="num-text" data-num="11" x="52" y="591">11</text>
-
-              <line class="lead-line" x1="40" y1="540" x2="14" y2="540"/>
-              <circle class="num-circle" data-num="12" cx="14" cy="540" r="9"/>
-              <text class="num-text" data-num="12" x="14" y="543">12</text>
-            </g>
-          </svg>
-
-          <div class="tech-list" id="techList">
-            <ol>
-              <li data-n="1"><span class="n">01</span><span>vorrichtung · grundplatte</span></li>
-              <li data-n="2"><span class="n">02</span><span>rohrkörper · gehäuse</span></li>
-              <li data-n="3"><span class="n">03</span><span>atemmembran · textile blase</span></li>
-              <li data-n="4"><span class="n">04</span><span>abschlussdeckel</span></li>
-              <li data-n="5"><span class="n">05</span><span>verbindungsring</span></li>
-              <li data-n="6"><span class="n">06</span><span>led-ring · rhythmus-anzeige</span></li>
-              <li data-n="7"><span class="n">07</span><span>sensormodul</span></li>
-              <li data-n="8"><span class="n">08</span><span>lautsprecher (optional)</span></li>
-              <li data-n="9"><span class="n">09</span><span>motor · pneumatik</span></li>
-              <li data-n="10"><span class="n">10</span><span>akku / stromversorgung</span></li>
-              <li data-n="11"><span class="n">11</span><span>kabelführung</span></li>
-              <li data-n="12"><span class="n">12</span><span>fernbedienung</span></li>
-            </ol>
-            <p class="caption" style="margin-top:20px">hover über teile links oder nummern links — beiden hervorhebungen sind verknüpft.</p>
-          </div>
+      <!-- objekt 70: explosionszeichnung als statisches foto (ersetzt das interaktive techSvg) -->
+      <div style="padding: 4vw 0 2vw">
+        <div class="eyebrow"><span class="dot"></span><span>technischer aufbau · explosionszeichnung</span></div>
+        <div class="placeholder has-img" style="aspect-ratio: 3/4; max-width: 560px; margin: 24px auto 0">
+          <picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:3/4;" data-crop="contain"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p16-explosion-foto-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Explosionszeichnung Objekt 70 — technischer Aufbau" loading="lazy"></picture>
         </div>
       </div>
 
       <!-- Image row -->
       <div style="padding: 2vw 0 4vw">
         <div class="o70-image-row fade">
-          <div class="placeholder has-img wide"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Ausstellung Sehnsucht Wald — Deutsches Textilmuseum 03/2026" loading="lazy"></picture></div>
-          <div class="placeholder has-img a"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-a-645w.avif?v=1777741666 645w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-a-645w.webp?v=1777741666 645w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-a-645w.jpg?v=1777741666" alt="Büroraum — Umsetzung 01" loading="lazy"></picture></div>
-          <div class="placeholder has-img b"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-b-800w.avif?v=1777741666 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-b-800w.webp?v=1777741666 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-b-800w.jpg?v=1777741666" alt="Büroraum — Umsetzung 02" loading="lazy"></picture></div>
+          <div class="placeholder has-img wide"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:16/9;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p17-ausstellung-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Ausstellung Sehnsucht Wald — Deutsches Textilmuseum 03/2026" loading="lazy"></picture></div>
+          <div class="placeholder has-img a"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:4/3;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-a-645w.avif?v=1777822010 645w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-a-645w.webp?v=1777822010 645w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-a-645w.jpg?v=1777822010" alt="Büroraum — Umsetzung 01" loading="lazy"></picture></div>
+          <div class="placeholder has-img b"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:4/3;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-b-800w.avif?v=1777822010 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-b-800w.webp?v=1777822010 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p19-office-b-800w.jpg?v=1777822010" alt="Büroraum — Umsetzung 02" loading="lazy"></picture></div>
         </div>
 
+        <div class="placeholder has-img" style="aspect-ratio: 16/9; margin-top: 40px">
+          <picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:16/9;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-1920w.avif?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-1920w.webp?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-1920w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p18-imagevideo-team-1920w.jpg?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Imagevideo — Team" loading="lazy"></picture>
+        </div>
         <div class="image-video">
           <span>hier geht's zum imagevideo</span>
           <a href="#" onclick="return false;">— noch nicht verfügbar</a>
@@ -944,49 +794,49 @@
 
       <div class="fa-grid">
         <div class="fa-card fa-a lb-trigger" data-lb="rettung">
-          <div class="placeholder has-img"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.avif?v=1777741666 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.webp?v=1777741666 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.jpg?v=1777741666" alt="Rettungsschilder für Panikbetroffene" loading="lazy"></picture></div>
+          <div class="placeholder has-img"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1;" data-crop="contain"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.avif?v=1777822010 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.webp?v=1777822010 800w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.jpg?v=1777822010" alt="Rettungsschilder für Panikbetroffene" loading="lazy"></picture></div>
           <div class="fa-caption">
             <span class="t">rettungsschilder für panikbetroffene</span>
             <span class="s">/ freie arbeit</span>
           </div>
         </div>
         <div class="fa-card fa-b lb-trigger" data-lb="material">
-          <div class="placeholder has-img"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.avif?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.webp?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.jpg?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Freudenberg — Dachhimmel" loading="lazy"></picture></div>
+          <div class="placeholder has-img"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.avif?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.webp?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.jpg?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Freudenberg — Dachhimmel" loading="lazy"></picture></div>
           <div class="fa-caption">
             <span class="t">materialität als raumbildung</span>
             <span class="s">/ freudenberg · automotive</span>
           </div>
         </div>
         <div class="fa-card fa-c lb-trigger" data-lb="muster">
-          <div class="placeholder has-img"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="/ Muster — Holzweiler Rewilding" loading="lazy"></picture></div>
+          <div class="placeholder has-img"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1;" data-crop="contain"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="/ Muster — Holzweiler Rewilding" loading="lazy"></picture></div>
           <div class="fa-caption">
             <span class="t">/ m u s t e r</span>
             <span class="s">/ holzweiler · rewilding</span>
           </div>
         </div>
         <div class="fa-card fa-d lb-trigger" data-lb="kamm">
-          <div class="placeholder has-img"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.avif?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.webp?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.jpg?v=1777741666 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Studie Kamm — Musterentwicklung" loading="lazy"></picture></div>
+          <div class="placeholder has-img"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.avif?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.webp?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.jpg?v=1777822010 1920w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Studie Kamm — Musterentwicklung" loading="lazy"></picture></div>
           <div class="fa-caption">
             <span class="t">studie kamm</span>
             <span class="s">/ alltagsgegenstand → muster</span>
           </div>
         </div>
         <div class="fa-card fa-e lb-trigger" data-lb="seat">
-          <div class="placeholder has-img"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Take a SEAT! — Damast" loading="lazy"></picture></div>
+          <div class="placeholder has-img"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1;" data-crop="contain"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Take a SEAT! — Damast" loading="lazy"></picture></div>
           <div class="fa-caption">
             <span class="t">take a seat!</span>
             <span class="s">/ damast · bauanleitung</span>
           </div>
         </div>
         <div class="fa-card fa-f lb-trigger" data-lb="bloom">
-          <div class="placeholder has-img"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.avif?v=1777741666 555w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.webp?v=1777741666 555w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.jpg?v=1777741666" alt="Flower Workshop Bloom" loading="lazy"></picture></div>
+          <div class="placeholder has-img"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.avif?v=1777822010 555w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.webp?v=1777822010 555w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.jpg?v=1777822010" alt="Flower Workshop Bloom" loading="lazy"></picture></div>
           <div class="fa-caption">
             <span class="t">blumenworkshop bloom</span>
             <span class="s">/ konzept</span>
           </div>
         </div>
         <div class="fa-card fa-g lb-trigger" data-lb="inform">
-          <div class="placeholder has-img"><picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="In Form Atelier" loading="lazy"></picture></div>
+          <div class="placeholder has-img"><picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:1/1;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="In Form Atelier" loading="lazy"></picture></div>
           <div class="fa-caption">
             <span class="t">in form atelier</span>
             <span class="s">/ m · konzept</span>
@@ -998,7 +848,7 @@
     <!-- ============== OUTRO ============== -->
     <section id="kontakt" class="outro">
       <div class="blur" style="background:none; filter:none; overflow:hidden">
-        <picture><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-800w.avif?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1200w.avif?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1920w.avif?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.avif?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-800w.webp?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1200w.webp?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1920w.webp?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.webp?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.jpg?v=1777741666" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-800w.jpg?v=1777741666 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1200w.jpg?v=1777741666 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1920w.jpg?v=1777741666 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.jpg?v=1777741666 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Outro — verschwommenes Schluss-Foto" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></picture>
+        <picture style="--focus-x:50.0%;--focus-y:50.0%;--aspect-ratio:16/8.5;" data-crop="focal"><source type="image/avif" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-800w.avif?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1200w.avif?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1920w.avif?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.avif?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><source type="image/webp" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-800w.webp?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1200w.webp?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1920w.webp?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.webp?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)"><img src="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.jpg?v=1777822010" srcset="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-800w.jpg?v=1777822010 800w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1200w.jpg?v=1777822010 1200w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-1920w.jpg?v=1777822010 1920w, https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p30-outro-2560w.jpg?v=1777822010 2560w" sizes="(max-width: 860px) 100vw, calc(100vw - 220px)" alt="Outro — verschwommenes Schluss-Foto" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block"></picture>
         <div class="thanks">thanks for watching :_)</div>
       </div>
       <div class="contact">
@@ -1112,31 +962,6 @@
   document.getElementById('hamburger').addEventListener('click', ()=> rail.classList.toggle('open'));
   navLinks.forEach(a=> a.addEventListener('click', ()=> rail.classList.remove('open')));
 
-  // --- Technical drawing: link parts + list ---
-  const techSvg = document.getElementById('techSvg');
-  const techList = document.getElementById('techList');
-  function hl(n, on){
-    techSvg.querySelectorAll(`.part[data-n="${n}"]`).forEach(el=>el.classList.toggle('hl', on));
-    techSvg.querySelectorAll(`.num-circle[data-num="${n}"]`).forEach(el=>el.classList.toggle('hl', on));
-    techSvg.querySelectorAll(`.num-text[data-num="${n}"]`).forEach(el=>el.classList.toggle('hl', on));
-    techList.querySelectorAll(`li[data-n="${n}"]`).forEach(el=>el.classList.toggle('hl', on));
-  }
-  techSvg.querySelectorAll('.part').forEach(el=>{
-    const n = el.dataset.n;
-    el.addEventListener('mouseenter', ()=>hl(n, true));
-    el.addEventListener('mouseleave', ()=>hl(n, false));
-  });
-  techSvg.querySelectorAll('.num-circle').forEach(el=>{
-    const n = el.dataset.num;
-    el.addEventListener('mouseenter', ()=>hl(n, true));
-    el.addEventListener('mouseleave', ()=>hl(n, false));
-  });
-  techList.querySelectorAll('li').forEach(el=>{
-    const n = el.dataset.n;
-    el.addEventListener('mouseenter', ()=>hl(n, true));
-    el.addEventListener('mouseleave', ()=>hl(n, false));
-  });
-
   // --- Lightbox ---
   const lb = document.getElementById('lightbox');
   const lbImg = document.getElementById('lbImg');
@@ -1150,49 +975,49 @@
       title: 'rettungsschilder für panikbetroffene',
       cap: '/ freie arbeit · konzeptvorschlag',
       body: 'Eine visuelle sprache für ruhe-orte: piktogramm-serie, die panik-betroffenen in öffentlichen räumen sichtbare, nicht stigmatisierende wege zur hilfe zeigt. noch in arbeit — bildmaterial wird nachgereicht.',
-      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.webp?v=1777741666',
+      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p20-rettungsschilder-800w.webp?v=1777822010',
       ph: 'rettungsschilder · serie'
     },
     material: {
       title: 'materialität als raumbildung',
       cap: '/ kollaboration · freudenberg · automotive',
       body: 'Der innenraum eines fahrzeugs ist ein raum im übergang: temporär bewohnt, in ständiger bewegung. in der zusammenarbeit mit freudenberg habe ich polsterstoffe und einen dachhimmel entwickelt — eine arbeit, die sich im textildesign verortet, in ihrem kern räumliche fragen verhandelt.',
-      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.webp?v=1777741666',
+      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p22-freudenberg-a-1920w.webp?v=1777822010',
       ph: 'freudenberg · polsterstoff + dachhimmel'
     },
     muster: {
       title: '/ m u s t e r',
       cap: '/ weiterentwicklung rewilding · holzweiler',
       body: 'Ein konzept, das ökologische fragestellungen mit textiler gestaltung verbindet und materialentscheidungen als bewusste positionierung zwischen nachhaltigkeit und ästhetik begreift. weiterentwicklung der kollektion rewilding für das modelabel holzweiler.',
-      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.webp?v=1777741666',
+      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p24-muster-2560w.webp?v=1777822010',
       ph: '/ muster · holzweiler'
     },
     kamm: {
       title: 'studie kamm',
       cap: '/ vom alltagsgegenstand zur musterentwicklung',
       body: 'Der kamm als formgeber: seine struktur — parallele zähne, taktile rippung, rhythmus — wird zum ausgangspunkt einer musterfamilie. studie über die übersetzung funktionaler objekte in textile oberflächen.',
-      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.webp?v=1777741666',
+      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p26-kamm-curtain-1920w.webp?v=1777822010',
       ph: 'kamm · musterstudie'
     },
     seat: {
       title: 'take a seat!',
       cap: '/ damast · polster · bauanleitung',
       body: 'Damastgewebe · polsterstoffe mit integrierter bauanleitung · konzeptgewebe, das die bauanleitung direkt im dessin trägt. funktion wird gestaltung — das material kommuniziert seine eigene verarbeitung.',
-      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.webp?v=1777741666',
+      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p27-seat-2560w.webp?v=1777822010',
       ph: 'take a seat! · damastdetail'
     },
     bloom: {
       title: 'flower workshop bloom',
       cap: '/ by the floral atelier · 9 & 10 mai 2025',
       body: 'Konzeptansatz für einen blumenworkshop. grafische identität, print-einladungen, social-tiles. @thefloralatelier. join us :-)',
-      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.webp?v=1777741666',
+      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p28-bloom-555w.webp?v=1777822010',
       ph: 'bloom · plakat-serie'
     },
     inform: {
       title: 'in form atelier',
       cap: '/ m · konzept',
       body: 'Atelier-identität „in form" — ein konzept für einen hybriden raum aus werkstatt und ausstellungsfläche. wortmarke + anwendung.',
-      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.webp?v=1777741666',
+      img: 'https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p29-inform-b-2560w.webp?v=1777822010',
       ph: 'in form atelier · wortmarke'
     }
   };

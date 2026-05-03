@@ -1,30 +1,209 @@
 {
-  "_comment": "Mapping HTML-Slot-Key → Originaldatei. Basiert auf 1:1-Vergleich mit portfolio2.pdf. Pfade relativ zu Repo-Root. originals_pdf/ = aus PDF extrahierte Bilder (für Slots wo kein hochauflösendes Original verfügbar oder wo Jules PDF-Crop entscheidend ist).",
+  "_comment": "Mapping HTML-Slot-Key → Originaldatei + Crop-Settings. Object-Schema: { original, aspectRatio, focal:[x,y] in [0..1], cropStrategy: 'focal'|'attention'|'contain', pdfPage }. Pfade relativ zu Repo-Root. originals_pdf/ = aus PDF extrahierte Bilder.",
 
-  "01-cover-hand-clean.png":      "originals/Front.tif",
+  "01-cover-hand-clean.png": {
+    "original": "originals/Front.tif",
+    "aspectRatio": "3/4.1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 1
+  },
 
-  "p05-sauer1-detail.png":        "originals/Entwurf1.tif",
-  "p06-sauer1-interior.png":      "originals_pdf/p-007-002.jpg",
-  "p07-sauer2-a.png":             "originals/IMG_5782.jpeg",
-  "p07-sauer2-b.png":             "originals/IMG_5781.jpeg",
-  "p07-sauer2-d.png":             "originals/IMG_5779.jpeg",
-  "p08-sauer2-leuchtkasten.png":  "originals/Schafswolle.tif",
+  "p05-sauer1-detail.png": {
+    "original": "originals/Entwurf1.tif",
+    "aspectRatio": "1/1.08",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 6
+  },
+  "p06-sauer1-interior.png": {
+    "original": "originals_pdf/p-007-002.jpg",
+    "aspectRatio": "16/9",
+    "focal": [0.5, 0.45],
+    "cropStrategy": "focal",
+    "pdfPage": 7
+  },
+  "p07-sauer2-a.png": {
+    "original": "originals/IMG_5781.jpeg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 8,
+    "_note": "IMG_5782.jpeg fehlt im neuen Ordner — temporär IMG_5781 reused, pHash entscheidet final"
+  },
+  "p07-sauer2-b.png": {
+    "original": "originals/IMG_5781.jpeg",
+    "aspectRatio": "3/4",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 8
+  },
+  "p07-sauer2-d.png": {
+    "original": "originals/IMG_5779.jpeg",
+    "aspectRatio": "5/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 8
+  },
+  "p08-sauer2-leuchtkasten.png": {
+    "original": "originals/Schafswolle.tif",
+    "aspectRatio": "16/9",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 9
+  },
 
-  "p09-lachen-b.png":             "originals_resolved/IMG_6063.jpg",
-  "p09-lachen-e.png":             "originals_resolved/IMG_6053.jpg",
-  "p10-lachen-installation.png":  "originals/Bildschirmfoto 2026-04-21 um 12.26.34.png",
+  "p09-lachen-b.png": {
+    "original": "originals_resolved/IMG_6063.jpg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 10
+  },
+  "p09-lachen-e.png": {
+    "original": "originals_resolved/IMG_6053.jpg",
+    "aspectRatio": "3/4",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 10
+  },
+  "p10-lachen-installation.png": {
+    "original": "originals_pdf/p-011-015.jpg",
+    "aspectRatio": "21/6",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 11,
+    "_note": "Alter Mapping zeigte auf nicht existentes Bildschirmfoto — fallback auf PDF-Extrakt der großen Wand-Installation S.11"
+  },
 
-  "p12-portrait-full.png":        "originals/Bildschirmfoto 2026-02-12 um 18.15.35.tif",
-  "p17-ausstellung.png":          "originals/IMG_7551.jpeg",
-  "p19-office-a.png":             "originals/rettung1.tif",
-  "p19-office-b.png":             "originals/rettung2.tif",
+  "p12-portrait-full.png": {
+    "original": "originals/Bildschirmfoto 2026-02-12 um 18.15.35.tif",
+    "aspectRatio": "3/4",
+    "focal": [0.5, 0.4],
+    "cropStrategy": "focal",
+    "pdfPage": 12
+  },
+  "p15-augen-portrait.png": {
+    "original": "originals_pdf/p-015-024.jpg",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.4],
+    "cropStrategy": "focal",
+    "pdfPage": 15,
+    "_note": "Augen-Portrait für Atemregulierungs-Statement (S.15 PDF)"
+  },
+  "p16-explosion-foto.png": {
+    "original": "originals_pdf/p-016-025.png",
+    "aspectRatio": "3/4",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "contain",
+    "pdfPage": 16,
+    "_note": "Foto der Explosionszeichnung — ersetzt das interaktive techSvg"
+  },
+  "p17-ausstellung.png": {
+    "original": "originals_pdf/p-017-026.jpg",
+    "aspectRatio": "16/9",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 17,
+    "_note": "IMG_7551.jpeg fehlt im neuen Ordner — fallback auf PDF-Extrakt"
+  },
+  "p18-imagevideo-team.png": {
+    "original": "originals_pdf/p-018-027.jpg",
+    "aspectRatio": "16/9",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 18,
+    "_note": "Personen-Foto neben Imagevideo-Link"
+  },
+  "p19-office-a.png": {
+    "original": "originals_pdf/p-017-026.jpg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 17,
+    "_note": "altes Mapping rettung1.tif war falsch (Rettungsschilder-Asset). PDF-Extrakt p17 ist Ausstellungsfoto — pHash entscheidet finalen Pfad"
+  },
+  "p19-office-b.png": {
+    "original": "originals_pdf/p-018-027.jpg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 18,
+    "_note": "altes Mapping rettung2.tif war falsch — Office-Rendering aus PDF"
+  },
 
-  "p20-rettungsschilder.png":     "originals/Rettungzeichen.tif",
-  "p22-freudenberg-a.png":        "originals/Freudenberg_mapping Kopie.tif",
-  "p24-muster.png":               "originals/look2.tif",
-  "p26-kamm-curtain.png":         "originals/Aufgabe7.tif",
-  "p27-seat.png":                 "originals/DESIGNFREUD.tif",
-  "p28-bloom.png":                "originals/Bildschirmfoto 2024-10-17 um 09.28.47.png",
-  "p29-inform-b.png":             "originals/Bildschirmfoto 2026-04-21 um 12.26.14.png",
-  "p30-outro.png":                "originals/Front.tif"
+  "p20-rettungsschilder.png": {
+    "original": "originals/Rettungzeichen.tif",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "contain",
+    "pdfPage": 19
+  },
+  "p21-auto-interieur.png": {
+    "original": "originals_pdf/p-021-039.jpg",
+    "aspectRatio": "16/9",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 21,
+    "_note": "Auto-Innenraum-Foto S.21"
+  },
+  "p22-freudenberg-a.png": {
+    "original": "originals/Freudenberg_mapping Kopie.tif",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 21
+  },
+  "p23-runway-models.png": {
+    "original": "originals_pdf/p-023-045.jpg",
+    "aspectRatio": "16/9",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 23,
+    "_note": "Models-Runway mit Muster-Kollektion S.23"
+  },
+  "p24-muster.png": {
+    "original": "originals/look2.tif",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "contain",
+    "pdfPage": 22
+  },
+  "p26-kamm-curtain.png": {
+    "original": "originals/Aufgabe7.tif",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 24
+  },
+  "p27-seat.png": {
+    "original": "originals_pdf/p-025-062.jpg",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "contain",
+    "pdfPage": 25,
+    "_note": "Damast-Polsterstoff. PDF-Extrakt statt DESIGNFREUD.tif (war thematisch falsch — zeigte Models)"
+  },
+  "p28-bloom.png": {
+    "original": "originals/Bildschirmfoto 2024-10-17 um 09.28.47.png",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 26
+  },
+  "p29-inform-b.png": {
+    "original": "originals_pdf/p-027-070.jpg",
+    "aspectRatio": "1/1",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 27,
+    "_note": "In-Form Atelier Hauptbild aus PDF-Extrakt (Bildschirmfoto fehlt im neuen Master-Ordner)"
+  },
+  "p30-outro.png": {
+    "original": "originals/Front.tif",
+    "aspectRatio": "16/8.5",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 30
+  }
 }

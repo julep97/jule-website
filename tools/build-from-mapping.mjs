@@ -55,6 +55,13 @@ async function processSlot(slotKey, sourcePath) {
   }
 }
 
+function resolveSource(slotValue) {
+  // Schema-Migration: Object { original, ... } oder Legacy-String
+  if (typeof slotValue === 'string') return slotValue;
+  if (slotValue && typeof slotValue === 'object' && typeof slotValue.original === 'string') return slotValue.original;
+  return null;
+}
+
 async function main() {
   await ensureDir(OUT);
   const raw = JSON.parse(await fs.readFile(MAPPING, 'utf8'));
@@ -62,8 +69,19 @@ async function main() {
 
   console.log(`processing ${entries.length} slot mappings…`);
   const t0 = Date.now();
-  let ok = 0, fail = 0;
-  for (const [slotKey, sourcePath] of entries) {
+  let ok = 0, fail = 0, skip = 0;
+  for (const [slotKey, slotValue] of entries) {
+    const sourcePath = resolveSource(slotValue);
+    if (!sourcePath) {
+      console.warn(`SKIP ${slotKey}: no 'original' field`);
+      skip++;
+      continue;
+    }
+    if (sourcePath.includes('?')) {
+      console.warn(`SKIP ${slotKey}: placeholder path '${sourcePath}' — needs verify-mapping resolve`);
+      skip++;
+      continue;
+    }
     try {
       await processSlot(slotKey, sourcePath);
       ok++;
@@ -72,7 +90,7 @@ async function main() {
       fail++;
     }
   }
-  console.log(`\n done in ${((Date.now()-t0)/1000).toFixed(1)}s · ${ok} ok · ${fail} fail`);
+  console.log(`\n done in ${((Date.now()-t0)/1000).toFixed(1)}s · ${ok} ok · ${skip} skip · ${fail} fail`);
   if (fail) process.exit(1);
 }
 

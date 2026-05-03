@@ -13,7 +13,8 @@
     "images:ab": "node tools/ab-compare.mjs",
     "images:gallery": "node tools/gallery.mjs",
     "images:build": "node tools/build-from-mapping.mjs",
-    "images:upload": "node tools/upload-r2.mjs",
+    "images:upload": "node --env-file=.env tools/upload-r2-s3.mjs",
+    "images:verify": "node tools/verify-mapping.mjs",
     "html:transform": "node tools/transform-html.mjs"
   },
   "devDependencies": {
@@ -22,5 +23,8 @@
     "p-limit": "^7.3.0",
     "sharp": "^0.34.5",
     "wrangler": "^4.87.0"
+  },
+  "dependencies": {
+    "sharp-phash": "^2.2.0"
   }
 }
