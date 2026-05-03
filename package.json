@@ -12,6 +12,7 @@
     "images:optimize": "node tools/optimize-images.mjs",
     "images:ab": "node tools/ab-compare.mjs",
     "images:gallery": "node tools/gallery.mjs",
+    "pages:render": "node tools/render-pdf-pages.mjs",
     "images:build": "node tools/build-from-mapping.mjs",
     "images:upload": "node --env-file=.env tools/upload-r2-s3.mjs",
     "images:verify": "node tools/verify-mapping.mjs",
