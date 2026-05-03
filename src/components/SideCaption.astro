@@ -1,0 +1,43 @@
+---
+// Tufte / Paloma-Wool style sidenote. Wraps a number + text.
+//
+// Props:
+//   num — small ordinal label (e.g. "01")
+//   title — short label (e.g. "Material")
+
+interface Props { num?: string; title?: string }
+const { num, title } = Astro.props;
+---
+
+<aside class="side">
+  {(num || title) && (
+    <header class="side-head">
+      {num && <span class="side-num">{num}</span>}
+      {title && <span class="side-title">{title}</span>}
+    </header>
+  )}
+  <div class="side-body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .side {
+    font-family: var(--font-display);
+    font-size: 0.95rem;
+    line-height: 1.55;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .side-head {
+    display: flex; gap: 0.6rem; align-items: baseline;
+    margin-bottom: 0.4rem;
+    font-family: var(--font-mono); font-size: 0.7rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--contrast);
+  }
+  .side-num { font-variant-numeric: tabular-nums; }
+  .side-body :global(p) { margin: 0; }
+  .side-body :global(p + p) { margin-top: 0.6rem; }
+  .side-body :global(em) { font-style: italic; color: var(--red-text); }
+</style>

@@ -1,0 +1,153 @@
+---
+import Editorial from '../../layouts/Editorial.astro';
+import Hero from '../../components/Hero.astro';
+import SideCaption from '../../components/SideCaption.astro';
+import ProjectCode from '../../components/ProjectCode.astro';
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Editorial
+  title="Entwurf Sauer 1 — jule plaehn"
+  description="Vollversatz in Kachelform, vernähter Filz. Modulares Akustik-System für hellhörige Räume — Teil des Nutritions-Projekts."
+  ogImage="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/p05-sauer1-detail-1920w.jpg"
+>
+  <article class="work">
+
+    <header class="work-head">
+      <p class="eyebrow">— nutritions · entwurf 01 / 03</p>
+      <h1 class="display"><em>Sauer</em> 1</h1>
+      <ProjectCode num="01" title="entwurf sauer · filz · vollversatz" />
+    </header>
+
+    <section class="intro">
+      <p class="lead">
+        Ein modulares Akustik-Textil aus vernähtem Filz —
+        die <em>Sauer</em>-Form als Kachel, der Vollversatz als Fläche.
+      </p>
+    </section>
+
+    <section class="spread spread--detail">
+      <Hero
+        slot="p05-sauer1-detail"
+        widths={[800, 1200, 1920, 2560]}
+        alt="Detail des Filz-Vollversatzes in Kachelform — eine sechseckige Sauer-Form vernäht"
+        aspectRatio="1/1"
+        priority
+      />
+      <SideCaption num="01" title="Material">
+        <p>
+          Aus der Form <em>Sauer</em> wurde dieser Vollversatz in
+          Kachelform gestaltet.
+        </p>
+        <p>
+          Vernäht wurde Filz, um ein verstärktes Textil zu erhalten.
+        </p>
+      </SideCaption>
+    </section>
+
+    <section class="spread spread--interior">
+      <SideCaption num="02" title="Anwendung">
+        <p>
+          Exemplarisch kann der Entwurf in einem sehr hellhörigen
+          Esszimmer so zum Einsatz kommen.
+        </p>
+        <p>
+          In einem Holzrahmen kann das modulare System <em>an der Wand
+          angebracht</em> werden.
+        </p>
+      </SideCaption>
+      <Hero
+        slot="p06-sauer1-interior"
+        widths={[561, 800]}
+        alt="Anwendung des Sauer-1-Filzversatzes in einem Esszimmer mit Holzrahmen an der Wand"
+        aspectRatio="4/3"
+        sizes="(max-width: 820px) 92vw, 60vw"
+      />
+    </section>
+
+    <footer class="work-foot">
+      <a href={`${base}/`} class="back">← zurück</a>
+      <a href={`${base}/print/#p6`} class="print-link">
+        Print-Ansicht →
+        <span class="meta">PDF p.6 + p.7</span>
+      </a>
+    </footer>
+
+  </article>
+</Editorial>
+
+<style>
+  .work {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: var(--gap-xl) var(--gap-md);
+  }
+
+  .work-head {
+    margin-bottom: var(--gap-xl);
+  }
+  .work-head .eyebrow { margin-bottom: var(--gap-sm); }
+  .work-head h1.display {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 0.95;
+    margin-bottom: var(--gap-md);
+  }
+  .work-head h1 em { font-style: italic; }
+
+  .intro {
+    max-width: 36rem;
+    margin: 0 auto var(--gap-xl);
+    text-align: center;
+  }
+  .intro .lead { color: var(--ink); }
+  .intro em { font-style: italic; color: var(--red-text); }
+
+  .spread {
+    display: grid;
+    gap: var(--gap-md) var(--gap-lg);
+    margin-bottom: var(--gap-xl);
+    align-items: start;
+  }
+  .spread--detail {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 1fr);
+  }
+  .spread--interior {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+  }
+
+  .work-foot {
+    display: flex; justify-content: space-between; align-items: baseline;
+    padding-top: var(--gap-lg);
+    border-top: 1px solid var(--hair);
+    font-family: var(--font-mono); font-size: 0.85rem;
+  }
+  .work-foot a {
+    color: var(--ink);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 1px;
+    transition: border-color .15s;
+  }
+  .work-foot a:hover, .work-foot a:focus-visible {
+    border-color: var(--red); outline: none;
+  }
+  .work-foot .meta {
+    margin-left: 0.5rem;
+    color: var(--contrast);
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 820px) {
+    .work { padding: var(--gap-lg) var(--gap-sm); }
+    .work-head { margin-bottom: var(--gap-lg); }
+    .intro { margin-bottom: var(--gap-lg); }
+    .spread,
+    .spread--detail,
+    .spread--interior {
+      grid-template-columns: 1fr;
+      gap: var(--gap-md);
+      margin-bottom: var(--gap-lg);
+    }
+  }
+</style>

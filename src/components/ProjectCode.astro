@@ -1,0 +1,23 @@
+---
+// Numerical project label, Paloma-Wool idiom ("no. 07 / sauer 1").
+interface Props { num: string; title: string }
+const { num, title } = Astro.props;
+---
+
+<p class="project-code">
+  <span class="num">no. {num}</span>
+  <span class="sep">/</span>
+  <span class="title">{title}</span>
+</p>
+
+<style>
+  .project-code {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.04em;
+    color: var(--contrast);
+    text-transform: lowercase;
+  }
+  .project-code .num { font-variant-numeric: tabular-nums; }
+  .project-code .sep { margin: 0 0.5rem; opacity: 0.5; }
+</style>

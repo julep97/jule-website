@@ -6,15 +6,15 @@
 <title>jule plaehn — textile design /26</title>
 <meta name="description" content="Portfolio von Jule Plaehn — Textile Design /26. Krefeld. Nutritions, (Objekt) siebzig, Freie Arbeiten.">
 <meta name="author" content="Jule Plaehn">
-<link rel="canonical" href="https://julep97.github.io/jule-website/">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="alternate" type="application/xml" href="sitemap.xml">
+<link rel="canonical" href="https://julep97.github.io/jule-website/print/">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<link rel="alternate" type="application/xml" href="../sitemap.xml">
 
 <!-- Open Graph -->
 <meta property="og:type" content="profile">
 <meta property="og:title" content="jule plaehn — textile design /26">
 <meta property="og:description" content="Portfolio von Jule Plaehn — Textile Design /26. Krefeld. Nutritions, (Objekt) siebzig, Freie Arbeiten.">
-<meta property="og:url" content="https://julep97.github.io/jule-website/">
+<meta property="og:url" content="https://julep97.github.io/jule-website/print/">
 <meta property="og:image" content="https://pub-45145834ff2b45db8a585cff5b669e13.r2.dev/page-01-1520w.jpg">
 <meta property="og:image:width" content="1520">
 <meta property="og:image:height" content="2151">
@@ -671,7 +671,7 @@
   // Pages with hotspots lose the button-role (otherwise nested-interactive a11y).
   // The page itself stays clickable for lightbox via mouse, but is no longer a
   // tab-stop — keyboard users tab through hotspots and then to the next page.
-  fetch('tools/hotspots.json').then(r => r.ok ? r.json() : null).then(data => {
+  fetch('../data/hotspots.json').then(r => r.ok ? r.json() : null).then(data => {
     if (!data) return;
     for (const [pid, spots] of Object.entries(data)) {
       if (pid.startsWith('_')) continue;

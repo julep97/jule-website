@@ -27,6 +27,11 @@ node_modules/
 m[0-9][0-9]-*.jpeg
 live-*.jpeg
 b[0-9]-*.jpeg
+c[0-9]-*.jpeg
+
+# Astro
+.astro/
+dist/
 
 # Visual regression test outputs
 tests/baseline/
