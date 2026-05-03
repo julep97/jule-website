@@ -17,6 +17,8 @@
     "images:upload": "node --env-file=.env tools/upload-r2-s3.mjs",
     "images:verify": "node tools/verify-mapping.mjs",
     "html:transform": "node tools/transform-html.mjs",
+    "html:extract-text": "node tools/extract-page-text.mjs",
+    "html:inject-text": "node tools/inject-page-text.mjs",
     "test:baseline": "node tools/snapshot.mjs baseline",
     "test:current": "node tools/snapshot.mjs current",
     "test:diff": "node tools/diff-baseline.mjs",
