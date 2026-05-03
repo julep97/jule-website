@@ -1,0 +1,16 @@
+{
+  "_comment": "Hotspots pro Page als Bbox in Prozent (top, left, width, height). Manuell vermessen anhand dist-images/page-NN-1520w.jpg.",
+
+  "p1": [
+    { "bbox": [9, 52, 4, 44], "href": "mailto:jule.plaehn@web.de", "label": "E-Mail an Jule Plaehn" },
+    { "bbox": [13, 52, 3, 25], "href": "tel:+4901636279334", "label": "Anruf — 01636279334" }
+  ],
+  "p3": [
+    { "bbox": [49, 33, 3, 12], "href": "#p4", "label": "Zu Nutritions" },
+    { "bbox": [52, 33, 3, 18], "href": "#p12", "label": "Zu Objektsiebzig" },
+    { "bbox": [55, 33, 3, 18], "href": "#p20", "label": "Zu Freie Arbeiten" }
+  ],
+  "p19": [
+    { "bbox": [16, 33, 3, 34], "href": "#imagevideo", "label": "Imagevideo (Link folgt)" }
+  ]
+}

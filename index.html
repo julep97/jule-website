@@ -163,6 +163,22 @@
     z-index:2;
   }
 
+  /* ---------- hotspots ---------- */
+  .hotspot{
+    position:absolute; z-index:3;
+    display:block;
+    border:1px dashed transparent;
+    border-radius:2px;
+    text-indent:-9999px; overflow:hidden;
+    transition: border-color .15s ease, background .15s ease;
+  }
+  .hotspot:hover,
+  .hotspot:focus-visible{
+    border-color: var(--red);
+    background: rgba(232,52,26,.08);
+    outline:none;
+  }
+
   /* ---------- lightbox ---------- */
   .page{ cursor: zoom-in }
   .page:focus-visible{ outline: 2px solid var(--red); outline-offset: 4px }
@@ -594,15 +610,64 @@
     if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
   }
 
-  PAGES.forEach((p, idx)=>{
+  function makePageInteractive(p, idx){
     p.tabIndex = 0;
     p.setAttribute('role', 'button');
     p.setAttribute('aria-label', `Seite ${idx+1} vergrößern`);
-    p.addEventListener('click', ()=> openLightbox(idx));
+  }
+  function unmakePageInteractive(p){
+    p.removeAttribute('tabindex');
+    p.removeAttribute('role');
+    p.removeAttribute('aria-label');
+  }
+  PAGES.forEach((p, idx)=>{
+    makePageInteractive(p, idx);
+    p.addEventListener('click', e=>{
+      // hotspot click should not also open lightbox
+      if (e.target.closest('.hotspot')) return;
+      openLightbox(idx);
+    });
     p.addEventListener('keydown', e=>{
+      if (e.target.closest('.hotspot')) return;
+      if (e.target !== p) return; // ignore key events bubbling from focusable children
       if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openLightbox(idx); }
     });
   });
+
+  // Hotspots: load tools/hotspots.json and inject <a> overlays into each page.
+  // Pages with hotspots lose the button-role (otherwise nested-interactive a11y).
+  // The page itself stays clickable for lightbox via mouse, but is no longer a
+  // tab-stop — keyboard users tab through hotspots and then to the next page.
+  fetch('tools/hotspots.json').then(r => r.ok ? r.json() : null).then(data => {
+    if (!data) return;
+    for (const [pid, spots] of Object.entries(data)) {
+      if (pid.startsWith('_')) continue;
+      const page = document.getElementById(pid);
+      if (!page) continue;
+      unmakePageInteractive(page);
+      for (const s of spots) {
+        const a = document.createElement('a');
+        a.className = 'hotspot';
+        a.href = s.href;
+        a.setAttribute('aria-label', s.label);
+        a.textContent = s.label; // text-indent hides visually, screen readers read it
+        const [t, l, h, w] = s.bbox;
+        a.style.top    = t + '%';
+        a.style.left   = l + '%';
+        a.style.width  = w + '%';
+        a.style.height = h + '%';
+        // anchor links should smooth-scroll like the topbar nav
+        if (s.href.startsWith('#')) {
+          a.addEventListener('click', e => {
+            const id = s.href.slice(1);
+            const target = document.getElementById(id);
+            if (target) { e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+          });
+        }
+        page.appendChild(a);
+      }
+    }
+  }).catch(() => {});
 
   lbClose.addEventListener('click', closeLightbox);
   lbPrev.addEventListener('click', ()=> cur > 0 && setLightboxPage(cur - 1));
