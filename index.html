@@ -239,7 +239,7 @@
     <a href="#p20">/freie arbeiten</a>
     <a href="#p3">contents</a>
   </nav>
-  <div class="pages">/26</div>
+  <div class="pages"><span id="page-indicator">01</span> / 30</div>
 </header>
 
 <main class="book">
@@ -628,6 +628,26 @@
   }
   window.addEventListener('hashchange', handleHash);
   if (location.hash.startsWith('#lb=')) handleHash();
+
+  // Active-Page-Indicator: which page is most visible in the viewport
+  const indicator = document.getElementById('page-indicator');
+  if (indicator && 'IntersectionObserver' in window) {
+    let visibility = new Map(); // page-element -> visibleRatio
+    const io = new IntersectionObserver((entries) => {
+      for (const e of entries) visibility.set(e.target, e.intersectionRatio);
+      // pick the page with highest ratio
+      let best = null, bestR = 0;
+      for (const [el, r] of visibility) if (r > bestR) { bestR = r; best = el; }
+      if (best) {
+        const idx = PAGES.indexOf(best);
+        if (idx >= 0) indicator.textContent = pad(idx + 1);
+      }
+    }, {
+      threshold: [0, 0.25, 0.5, 0.75, 1],
+      rootMargin: '-48px 0px 0px 0px', // account for topbar height
+    });
+    PAGES.forEach(p => io.observe(p));
+  }
 </script>
 </body>
 </html>
