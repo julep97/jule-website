@@ -70,13 +70,8 @@
     "cropStrategy": "focal",
     "pdfPage": 10
   },
-  "p10-lachen-installation.png": {
-    "original": "originals_pdf/p-011-015.jpg",
-    "aspectRatio": "21/6",
-    "focal": [0.5, 0.5],
-    "cropStrategy": "focal",
-    "pdfPage": 11,
-    "_note": "Alter Mapping zeigte auf nicht existentes Bildschirmfoto — fallback auf PDF-Extrakt der großen Wand-Installation S.11"
+  "_removed_p10-lachen-installation": {
+    "_note": "Removed 2026-05-03: PDF-Extrakt p-011-015.jpg zeigte fremde Architektur-Skizze, nicht die Lachen-Wandinstallation. Ersetzt durch p10-lachen-wand + p10-lachen-tisch (Crops aus 600-DPI-Render von Page 11 via tools/crop-from-page.mjs)."
   },
 
   "p12-portrait-full.png": {

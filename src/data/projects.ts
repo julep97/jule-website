@@ -44,9 +44,9 @@ export const projects: Project[] = [
     eyebrow: '— nutritions · entwurf 03 / 03',
     meta: 'lasercut · hand · installation',
     lead: 'Filz-Ausarbeitungen mit Lasercutter und Hand zugeschnitten — als Vase, Kerzenhalter, Wandapplikation einsetzbar.',
-    hero: 'page-11-1520w',
+    hero: 'p10-lachen-tisch',
     pdfPages: 'p.10 + p.11',
-    status: 'wip',
+    status: 'live',
   },
   {
     slug: 'objekt-siebzig',

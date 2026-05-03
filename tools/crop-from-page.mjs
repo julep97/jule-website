@@ -33,6 +33,24 @@ const CROPS = [
     box: { left: 0.04, top: 0.07, width: 0.92, height: 0.86 },
     widths: [800, 1200, 1920],
   },
+  // Lachen — page 11 anwendung. Replaces broken p10-lachen-installation
+  // (PDF embed had wrong image — see mapping.json _note).
+  // NOTE: produced with one-off 600 DPI render (4961×7016) for crisp 1200/1920w.
+  // Re-running this tool against the standard 2280w master will produce
+  // lower-resolution variants — re-render at 600 DPI first if regenerating.
+  {
+    slot: 'p10-lachen-wand',
+    sourcePage: 11,
+    // narrow vertical strip — source crop ≈1215px wide at 600 DPI, 1920w skipped
+    box: { left: 0.082, top: 0.155, width: 0.245, height: 0.515 },
+    widths: [800, 1200],
+  },
+  {
+    slot: 'p10-lachen-tisch',
+    sourcePage: 11,
+    box: { left: 0.345, top: 0.158, width: 0.40, height: 0.155 },
+    widths: [800, 1200, 1920],
+  },
 ];
 
 async function processCrop(c) {
