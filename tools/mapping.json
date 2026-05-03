@@ -56,19 +56,53 @@
     "_note": "Küche mit 3 Sauer-2-Modulen vor Leuchtkästen-Pattern. Originals/Schafswolle.tif war falsch (Webware-Detail statt Installation)."
   },
 
+  "p09-lachen-a.png": {
+    "original": "originals_resolved/IMG_6061.jpg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 10,
+    "_note": "Perspektive: aufrechte D-Filzstücke mit Schatten auf Weiß (page 10 L1)"
+  },
   "p09-lachen-b.png": {
     "original": "originals_resolved/IMG_6063.jpg",
     "aspectRatio": "4/3",
     "focal": [0.5, 0.5],
     "cropStrategy": "focal",
-    "pdfPage": 10
+    "pdfPage": 10,
+    "_note": "Top-down: D-Filzstücke flach ausgelegt (page 10 R1)"
+  },
+  "p09-lachen-c.png": {
+    "original": "originals_resolved/IMG_6065.jpg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 10,
+    "_note": "Vier-Wand-Vase mit Cutouts, Blick hinein (page 10 R3)"
+  },
+  "p09-lachen-d.png": {
+    "original": "originals_resolved/IMG_6049.jpg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 10,
+    "_note": "Vertikaler Filzstreifen mit zwei Ösen + Karabiner (page 10 R2)"
   },
   "p09-lachen-e.png": {
     "original": "originals_resolved/IMG_6053.jpg",
     "aspectRatio": "3/4",
     "focal": [0.5, 0.5],
     "cropStrategy": "focal",
-    "pdfPage": 10
+    "pdfPage": 10,
+    "_note": "Hohle Vase, Blick von oben hinein (page 10 L2)"
+  },
+  "p09-lachen-f.png": {
+    "original": "originals_resolved/IMG_6047.jpg",
+    "aspectRatio": "4/3",
+    "focal": [0.5, 0.5],
+    "cropStrategy": "focal",
+    "pdfPage": 10,
+    "_note": "Sternförmig konzentrische Filzbögen, Blick von oben (page 10 L3)"
   },
   "_removed_p10-lachen-installation": {
     "_note": "Removed 2026-05-03: PDF-Extrakt p-011-015.jpg zeigte fremde Architektur-Skizze, nicht die Lachen-Wandinstallation. Ersetzt durch p10-lachen-wand + p10-lachen-tisch (Crops aus 600-DPI-Render von Page 11 via tools/crop-from-page.mjs)."

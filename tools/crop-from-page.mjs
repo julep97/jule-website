@@ -51,6 +51,13 @@ const CROPS = [
     box: { left: 0.345, top: 0.158, width: 0.40, height: 0.155 },
     widths: [800, 1200, 1920],
   },
+  {
+    slot: 'p10-lachen-konzept',
+    sourcePage: 11,
+    // doorway w/ red bbox grid scaled at human size — wall installation concept
+    box: { left: 0.43, top: 0.366, width: 0.43, height: 0.49 },
+    widths: [800, 1200, 1920],
+  },
 ];
 
 async function processCrop(c) {

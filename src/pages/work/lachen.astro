@@ -7,6 +7,22 @@ import { projectBySlug } from '../../data/projects';
 
 const project = projectBySlug('lachen')!;
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// PDF p.10 — material grid (PDF reading order: L1, R1, L2, R2, L3, R3)
+const materialGrid = [
+  { slot: 'p09-lachen-a', aspect: '3/4',
+    alt: 'Aufrechte D-förmige Filzstücke in Reihen aufgestellt, mit Schatten auf weißem Untergrund — Perspektivansicht' },
+  { slot: 'p09-lachen-b', aspect: '4/3',
+    alt: 'D-förmige Filzstücke flach ausgelegt — Detail mit präzisen Lasercutter-Konturen' },
+  { slot: 'p09-lachen-e', aspect: '3/4',
+    alt: 'Hohle Filz-Vase, Blick von oben in die viereckige Form mit Wandcutouts' },
+  { slot: 'p09-lachen-d', aspect: '3/4',
+    alt: 'Vertikaler Filzstreifen mit zwei Ösen und einem Karabiner als Verbindungselement zwischen zwei Modulen' },
+  { slot: 'p09-lachen-f', aspect: '3/4',
+    alt: 'Sternförmig konzentrische Filzbögen — Blick von oben in eine zylindrische Konstruktion' },
+  { slot: 'p09-lachen-c', aspect: '3/4',
+    alt: 'Detailansicht einer vierwandigen Filz-Vase mit horizontalen Cutout-Reihen — Blick von oben hinein' },
+];
 ---
 
 <Editorial
@@ -30,7 +46,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </p>
     </section>
 
-    <!-- material — caption + 2-img detail pair from PDF page 10 -->
+    <!-- material — caption + 6-image grid mirroring PDF p10 layout -->
     <section class="material">
       <SideCaption num="01" title="Material">
         <p>
@@ -43,26 +59,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         </p>
       </SideCaption>
 
-      <div class="material-pair">
-        <Hero
-          slot="p09-lachen-b"
-          widths={[800, 1200, 1920, 2560]}
-          alt="Filz-Ausarbeitungen mit Lasercutter zugeschnitten — Detail mit präzisen Kreis- und Bogenformen"
-          aspectRatio="4/3"
-          sizes="(max-width: 820px) 92vw, 45vw"
-          priority
-        />
-        <Hero
-          slot="p09-lachen-e"
-          widths={[800, 1200, 1920, 2560]}
-          alt="Frei mit der Hand zugeschnittene Filz-Ausarbeitung — dreidimensionales Objekt mit gefalteten Laschen"
-          aspectRatio="3/4"
-          sizes="(max-width: 820px) 92vw, 30vw"
-        />
+      <div class="material-grid">
+        {materialGrid.map((img, i) => (
+          <Hero
+            slot={img.slot}
+            widths={[800, 1200, 1920, 2560]}
+            alt={img.alt}
+            aspectRatio={img.aspect}
+            sizes="(max-width: 820px) 92vw, 30vw"
+            priority={i === 0}
+          />
+        ))}
       </div>
     </section>
 
-    <!-- anwendung — wand portrait + caption + tisch landscape -->
+    <!-- anwendung — wand portrait + caption/tisch + konzept -->
     <section class="application">
       <Hero
         slot="p10-lachen-wand"
@@ -71,7 +82,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
         aspectRatio="1/3"
         sizes="(max-width: 820px) 60vw, 22vw"
       />
-      <div class="application-aside">
+
+      <div class="application-mid">
         <SideCaption num="02" title="Anwendung">
           <p>
             Als Installation auf dem Tisch — <em>Vase, Kerzenhalter</em>,
@@ -87,9 +99,17 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
           widths={[800, 1200, 1920]}
           alt="Filz-Lampion mit Glas in der Mitte auf einer Holz-Küchenarbeitsplatte vor weißer Fliesenwand"
           aspectRatio="11/6"
-          sizes="(max-width: 820px) 92vw, 50vw"
+          sizes="(max-width: 820px) 92vw, 35vw"
         />
       </div>
+
+      <Hero
+        slot="p10-lachen-konzept"
+        widths={[800, 1200, 1920]}
+        alt="Konzeptbild: Person in einem Türrahmen mit darüber gerasterten roten Markierungen, die zukünftige Wandinstallation in Maßstab zeigen"
+        aspectRatio="3/5"
+        sizes="(max-width: 820px) 92vw, 28vw"
+      />
     </section>
 
     <footer class="work-foot">
@@ -129,30 +149,30 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   .intro .lead { color: var(--ink); }
   .intro em { font-style: italic; color: var(--red-text); }
 
-  /* material — caption left, 2-img pair right (4:3 + 3:4) */
+  /* material — caption left (1fr), grid right (4fr); 3 columns at desktop */
   .material {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 4fr);
     gap: var(--gap-md) var(--gap-lg);
     align-items: start;
     margin-bottom: var(--gap-xl);
   }
-  .material-pair {
+  .material-grid {
     display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--gap-sm);
     align-items: start;
   }
 
-  /* application — tall wand portrait left, caption + tisch right */
+  /* anwendung — 3 columns: wand | (caption + tisch) | konzept */
   .application {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 3fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr) minmax(0, 1.2fr);
     gap: var(--gap-md) var(--gap-lg);
     align-items: start;
     margin-bottom: var(--gap-xl);
   }
-  .application-aside {
+  .application-mid {
     display: flex;
     flex-direction: column;
     gap: var(--gap-md);
@@ -176,6 +196,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   }
   .work-foot .meta { margin-left: 0.5rem; color: var(--contrast); font-size: 0.75rem; }
 
+  @media (max-width: 1100px) {
+    .material-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
   @media (max-width: 820px) {
     .work { padding: var(--gap-lg) var(--gap-sm); }
     .work-head { margin-bottom: var(--gap-lg); }
@@ -185,7 +209,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       gap: var(--gap-md);
       margin-bottom: var(--gap-lg);
     }
-    .material-pair {
+    .material-grid {
       grid-template-columns: 1fr;
       gap: var(--gap-sm);
     }
