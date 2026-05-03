@@ -16,12 +16,23 @@
     "images:build": "node tools/build-from-mapping.mjs",
     "images:upload": "node --env-file=.env tools/upload-r2-s3.mjs",
     "images:verify": "node tools/verify-mapping.mjs",
-    "html:transform": "node tools/transform-html.mjs"
+    "html:transform": "node tools/transform-html.mjs",
+    "test:baseline": "node tools/snapshot.mjs baseline",
+    "test:current": "node tools/snapshot.mjs current",
+    "test:diff": "node tools/diff-baseline.mjs",
+    "test:axe": "node tools/test-axe.mjs",
+    "test:loop": "npm run test:current && npm run test:diff",
+    "serve": "python3 -m http.server 8080"
   },
   "devDependencies": {
     "@aws-sdk/client-s3": "^3.1041.0",
+    "@axe-core/cli": "^4.11.3",
+    "@axe-core/playwright": "^4.11.3",
     "glob": "^13.0.6",
     "p-limit": "^7.3.0",
+    "pixelmatch": "^7.2.0",
+    "playwright": "^1.59.1",
+    "pngjs": "^7.0.0",
     "sharp": "^0.34.5",
     "wrangler": "^4.87.0"
   },

@@ -25,6 +25,12 @@ node_modules/
 .playwright-mcp/
 [0-9][0-9]-*.jpeg
 m[0-9][0-9]-*.jpeg
+live-*.jpeg
+
+# Visual regression test outputs
+tests/baseline/
+tests/current/
+tests/diff/
 
 # OS / Editor
 .DS_Store
